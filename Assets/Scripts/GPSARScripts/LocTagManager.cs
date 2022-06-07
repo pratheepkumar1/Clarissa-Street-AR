@@ -204,8 +204,9 @@ public class LocTagManager : MonoBehaviour
         if (currentLocation == null) return;
 
         Vector3 currentARCameraPosition = arCameraTransform.position;
-        float devicePosY = currentARCameraPosition.y;
+        float devicePosY = 0f;
         currentARCameraPosition.y = 0;
+        //currentARCameraPosition.y
 
         float groundLevel = 0f;
         if (PointOfInterests == null || PointOfInterests.Count == 0) return;

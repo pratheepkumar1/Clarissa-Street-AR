@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebcdb6ca15d580740b1c8ebe03cb54e4, type: 3}
+  m_Name: Magic Spell
+  m_EditorClassIdentifier: 
+  poiName: Pythodd
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit
+    amet erat efficitur, commodo mauris vel, elementum nulla. Aliquam erat volutpat.
+    Ut gravida pellentesque tempus. Mauris vel enim vel dui venenatis ullamcorper.
+    Donec iaculis tristique nunc, id luctus turpis iaculis ut. Duis cursus ac urna
+    vel luctus. Suspendisse potenti. Aliquam suscipit, massa in iaculis sodales,
+    risus quam malesuada nunc, eget euismod mauris ipsum at ligula.
+  objectPrefab: {fileID: 3065208693967968302, guid: b345f8d9f9c2da54ba12cc43e8e93a2a,
+    type: 3}
+  modelPrefab: {fileID: 1542473612949380947, guid: a967e5c4dd66a4669a0bf8e24eda6990,
+    type: 3}
+  canvasPrefab: {fileID: 1531612421245766800, guid: 4d349255133f0b64a9b83edd56905f11,
+    type: 3}
+  coordinates:
+    lat: 43.08614630992355
+    lon: -77.6762520245461
+  trackingRadius: 500
+  trackingExitMargin: 200
+  closeTrackingRadius: 30
+  closeTrackingExitMargin: 10
+  facingDirectionHeading: 0
+  relativeHeight: 0
