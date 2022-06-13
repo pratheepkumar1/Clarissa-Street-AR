@@ -72,12 +72,14 @@
     <Compile Include="Assets/Scripts/GPSARScripts/LocTagManager.cs" />
     <Compile Include="Assets/Scripts/ObjectDetectionScripts/NewText.cs" />
     <Compile Include="Assets/Scripts/GPSARScripts/LocationProvider.cs" />
-    <Compile Include="Assets/Scripts/GPSARScripts/Interfaces/AnchorInfoCanvasInterface.cs" />
-    <Compile Include="Assets/Scripts/GPSARScripts/AnchorInfoCanvas.cs" />
+    <Compile Include="Assets/Scripts/GPSARScripts/Interfaces/AnchorCanvasInterface.cs" />
+    <Compile Include="Assets/Scripts/GPSARScripts/AnchorCanvasBadge.cs" />
     <Compile Include="Assets/Scripts/ObjectDetectionScripts/GraphicsWorker.cs" />
     <Compile Include="Assets/Scripts/GPSARScripts/TrueHeadingProvider.cs" />
+    <Compile Include="Assets/Scripts/ARFeatheredPlaneMeshVisualizer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets/Shaders/FeatheredPlaneShader.shader" />
     <None Include="Assets/NNModels/data_classes.txt" />
   </ItemGroup>
   <ItemGroup>

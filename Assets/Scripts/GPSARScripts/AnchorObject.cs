@@ -30,7 +30,7 @@ public class AnchorObject : AnchorObjInterface
     public override void UpdatePosition(Vector3 pos, float groundLevelY, float devicePosY)
     {
 
-        pos.y = CalculateHeight(groundLevelY, devicePosY);
+        pos.y = 0f; //  CalculateHeight(groundLevelY, devicePosY);
 
         objectTransform.localPosition = pos;
     }
@@ -38,7 +38,7 @@ public class AnchorObject : AnchorObjInterface
     public override void UpdatePositionY(float groundLevelY, float devicePosY)
     {
         Vector3 localPos = objectTransform.localPosition;
-        localPos.y = CalculateHeight(groundLevelY, devicePosY);
+        localPos.y = 0f; //  CalculateHeight(groundLevelY, devicePosY);
         objectTransform.localPosition = localPos;
     }
 

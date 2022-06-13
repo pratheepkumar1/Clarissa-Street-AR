@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 This is a simple canvas I use to show the distance and name with description of the place.
 You could write a custom canvas as per need.
 */
-public class AnchorInfoCanvas : AnchorCanvasInterface, IPointerClickHandler
+public class AnchorCanvasBadge : AnchorCanvasInterface, IPointerClickHandler
 {
     [SerializeField]
     private GameObject descriptionObject;
@@ -102,8 +102,8 @@ public class AnchorInfoCanvas : AnchorCanvasInterface, IPointerClickHandler
 
     public override void UpdatePositionY(float groundLevelY, float devicePosY)
     {
-        float posY = 0;
-        posY = groundLevelY + pointOfInterest.RelativeHeight + 1f;
+        float posY = 0; //changed from devicePosY to 0
+        posY = groundLevelY + pointOfInterest.RelativeHeight + 0f; //Changed from 1f to 0f
         this.worldPosition.y = posY;
     }
 

@@ -36,7 +36,7 @@ public class LocTagManager : MonoBehaviour
 
     [SerializeField]
     private LocationProvider locationProvider;
-    private List<AnchorTrackerInfo> poiTrackerDatas = new List<AnchorTrackerInfo>();
+    private List<AnchorTrackerInfo> createdTrackerList = new List<AnchorTrackerInfo>();
 
     private Transform arCameraTransform;
 
@@ -56,7 +56,10 @@ public class LocTagManager : MonoBehaviour
         }
     }
 
-    public List<AnchorTrackerInfo> PoiTrackerDatas { get { return poiTrackerDatas; } }
+    public List<AnchorTrackerInfo> PoiTrackerDatas { get { return createdTrackerList; } }
+
+
+    //  Unity Functions ---------------------------------------------------------------------------------------------------------------------------------
 
     private void Awake()
     {
@@ -109,15 +112,15 @@ public class LocTagManager : MonoBehaviour
     {
 
         txt = GameObject.Find("Info").GetComponent<Text>();
-        txt.text = "HEllo";
+        txt.text = "Start walking around";
     }
 
     private void Update()
     {
 
-        for (int i = 0; i < poiTrackerDatas.Count; i++)
+        for (int i = 0; i < createdTrackerList.Count; i++)
         {
-            AnchorObjInterface poiObject = poiTrackerDatas[i].anchorObject;
+            AnchorObjInterface poiObject = createdTrackerList[i].anchorObject;
 
             if (poiObject != null)
             {
@@ -126,30 +129,15 @@ public class LocTagManager : MonoBehaviour
         }
     }
 
-    public void RefreshTrackers()
-    {
-        List<LocationAnchor> poisToRemove = new List<LocationAnchor>();
 
-        for (int i = 0; i < poiTrackerDatas.Count; i++)
-        {
-            if (!PointOfInterests.Contains(poiTrackerDatas[i].anchor))
-            {
-                poisToRemove.Add(poiTrackerDatas[i].anchor);
-            }
-        }
-
-        for (int i = 0; i < poisToRemove.Count; i++)
-        {
-            StopTrackingPOI(poisToRemove[i]);
-        }
-    }
+    //  Events  ---------------------------------------------------------------------------------------------------------------------------------
 
     private void OnARSessionStateChange(ARSessionStateChangedEventArgs evt)
     {
         previousUpdateAccuracy = 9999f;
         if (evt.state == ARSessionState.SessionTracking)
         {
-            RecheckPOITrackings();
+            CheckPoiTracking();
         }
         else
         {
@@ -192,19 +180,21 @@ public class LocTagManager : MonoBehaviour
         {
             previousUpdateAccuracy = accuracy;
             previousUpdateTimestamp = e.timestamp;
-            RecheckPOITrackings();
+            CheckPoiTracking();
         }
     }
 
+
+
     // Move all tracked anchor objects
 
-    private void RecheckPOITrackings()
+    private void CheckPoiTracking()
     {
         LatitudeLongitudeStruct currentLocation = locationProvider.Location;
         if (currentLocation == null) return;
 
         Vector3 currentARCameraPosition = arCameraTransform.position;
-        float devicePosY = 0f;
+        float devicePosY = currentARCameraPosition.y; //Can we change to 0f ??
         currentARCameraPosition.y = 0;
         //currentARCameraPosition.y
 
@@ -252,7 +242,7 @@ public class LocTagManager : MonoBehaviour
             }
 
 
-            AnchorTrackerInfo trackerData = poiTrackerDatas.Find(x => x.anchor == anchor);
+            AnchorTrackerInfo trackerData = createdTrackerList.Find(x => x.anchor == anchor);
 
             if (trackerData == null) continue;
 
@@ -323,9 +313,9 @@ public class LocTagManager : MonoBehaviour
     private void RotatePOIsRelativeToNorth(float heading, bool forceUpdate = false)
     {
 
-        for (int i = 0; i < poiTrackerDatas.Count; i++)
+        for (int i = 0; i < createdTrackerList.Count; i++)
         {
-            AnchorTrackerInfo trackerData = poiTrackerDatas[i];
+            AnchorTrackerInfo trackerData = createdTrackerList[i];
 
             if (trackerData == null || trackerData.anchor == null || (trackerData.anchor.CloseTracking && !forceUpdate)) continue;
 
@@ -352,9 +342,9 @@ public class LocTagManager : MonoBehaviour
 
 
         //Check if there is already objects for this tracker
-        if (poiTrackerDatas != null && poiTrackerDatas.Count > 0)
+        if (createdTrackerList != null && createdTrackerList.Count > 0)
         {
-            AnchorTrackerInfo poiTracker = poiTrackerDatas.Find((x) => x.anchor == anchor);
+            AnchorTrackerInfo poiTracker = createdTrackerList.Find((x) => x.anchor == anchor);
             if (poiTracker != null) return;
         }
 
@@ -400,7 +390,7 @@ public class LocTagManager : MonoBehaviour
         }
 
         AnchorTrackerInfo trackerData = new AnchorTrackerInfo(anchor, poiCanvas, poiObject);
-        poiTrackerDatas.Add(trackerData);
+        createdTrackerList.Add(trackerData);
     }
 
 
@@ -410,7 +400,7 @@ public class LocTagManager : MonoBehaviour
     {
         anchor.TrackingState = AnchorTrackingState.NotTracking;
 
-        AnchorTrackerInfo trackerData = poiTrackerDatas.Find((x) => x.anchor == anchor);
+        AnchorTrackerInfo trackerData = createdTrackerList.Find((x) => x.anchor == anchor);
 
         if (trackerData == null) return;
 
@@ -431,7 +421,27 @@ public class LocTagManager : MonoBehaviour
             Destroy(poiCanvas.gameObject);
         }
 
-        poiTrackerDatas.Remove(trackerData);
+        createdTrackerList.Remove(trackerData);
+    }
+
+
+
+    public void RefreshTrackers()
+    {
+        List<LocationAnchor> poisToRemove = new List<LocationAnchor>();
+
+        for (int i = 0; i < createdTrackerList.Count; i++)
+        {
+            if (!PointOfInterests.Contains(createdTrackerList[i].anchor))
+            {
+                poisToRemove.Add(createdTrackerList[i].anchor);
+            }
+        }
+
+        for (int i = 0; i < poisToRemove.Count; i++)
+        {
+            StopTrackingPOI(poisToRemove[i]);
+        }
     }
 
 
@@ -439,11 +449,11 @@ public class LocTagManager : MonoBehaviour
 
     private void StopTrackingPOIs()
     {
-        if (poiTrackerDatas != null)
+        if (createdTrackerList != null)
         {
-            for (int i = 0; i < poiTrackerDatas.Count; i++)
+            for (int i = 0; i < createdTrackerList.Count; i++)
             {
-                AnchorTrackerInfo trackerData = poiTrackerDatas[i];
+                AnchorTrackerInfo trackerData = createdTrackerList[i];
                 if (trackerData == null) continue;
 
                 LocationAnchor anchor = trackerData.anchor;
@@ -476,7 +486,7 @@ public class LocTagManager : MonoBehaviour
                 PointOfInterests[i].TrackingState = AnchorTrackingState.NotTracking;
             }
 
-            poiTrackerDatas.Clear();
+            createdTrackerList.Clear();
 
         }
     }
