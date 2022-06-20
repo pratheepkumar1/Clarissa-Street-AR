@@ -26,6 +26,6 @@ MonoBehaviour:
   trackingRadius: 500
   trackingExitMargin: 200
   closeTrackingRadius: 200
-  closeTrackingExitMargin: 10
+  closeTrackingExitMargin: 100
   facingDirectionHeading: 0
   relativeHeight: 0

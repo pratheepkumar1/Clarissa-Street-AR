@@ -45,6 +45,9 @@ public class LocationAnchor : ScriptableObject
     [SerializeField]
     private GameObject canvasPrefab;
 
+    [SerializeField]
+    private GameObject canvasInfoCard;
+
     [Header("Location")]
     [SerializeField]
     private LatitudeLongitudeStruct coordinates;
@@ -74,6 +77,11 @@ public class LocationAnchor : ScriptableObject
     private float relativeHeight = 0f;
 
     private AnchorTrackingState trackingState;
+
+
+    [SerializeField]
+    private AudioClip[] audioClips;
+
 
     #endregion
 

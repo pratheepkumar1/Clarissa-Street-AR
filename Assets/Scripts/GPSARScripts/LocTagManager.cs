@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.UI;
 
-
 public class LocTagManager : MonoBehaviour
 {
     public class AnchorTrackerInfo
@@ -47,7 +46,6 @@ public class LocTagManager : MonoBehaviour
     private Text txt;
 
 
-
     private List<LocationAnchor> PointOfInterests
     {
         get
@@ -63,8 +61,6 @@ public class LocTagManager : MonoBehaviour
 
     private void Awake()
     {
-
-
         if (arCamera != null)
         {
             arCameraTransform = arCamera.gameObject.transform;
@@ -217,7 +213,6 @@ public class LocTagManager : MonoBehaviour
                 {
                     CreateObjectsForPOI(anchor);
                 }
-
                 anchor.TrackingState = AnchorTrackingState.CloseTracking;
             }
             else if (!anchor.Tracking && distanceBetween <= anchor.TrackingRadius)
@@ -378,6 +373,8 @@ public class LocTagManager : MonoBehaviour
             poiObject.Setup(anchor, arCamera);
             poiObject.UpdateRotation(0);
         }
+
+
 
 
         if (anchor.CanvasPrefab != null)
