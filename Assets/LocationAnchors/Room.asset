@@ -20,6 +20,8 @@ MonoBehaviour:
     type: 3}
   canvasPrefab: {fileID: 1531612421245766800, guid: 4d349255133f0b64a9b83edd56905f11,
     type: 3}
+  canvasInfoCard: {fileID: 7126367677138617232, guid: 2d7f2bcba2d4e408189c37d44c9b3763,
+    type: 3}
   coordinates:
     lat: 43.08271
     lon: -77.657803

@@ -127,14 +127,11 @@ public class AnchorCanvasBadge : AnchorCanvasInterface, IPointerClickHandler
             ToggleDescriptionVisibility(!descriptionObject.activeSelf);
         }
     }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         ToggleDescriptionVisibility();
     }
 
-    public void HideVisibility()
-    {
-        GetComponent<Renderer>().enabled = true;
-    }
 
 }

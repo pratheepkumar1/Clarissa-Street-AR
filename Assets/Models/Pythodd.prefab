@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7505244853427622269}
   - component: {fileID: 6773236354950817229}
   - component: {fileID: 118327795038767323}
+  - component: {fileID: 8600799871096519016}
   m_Layer: 0
   m_Name: PorchPythodd
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8600799871096519016
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365825338036965319}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.61242, y: 6.0960007, z: 1.7653532}
+  m_Center: {x: 7.9248047, y: 0, z: 0.8826766}
 --- !u!1 &806506428678219026
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +109,7 @@ GameObject:
   - component: {fileID: 3890502920789914036}
   - component: {fileID: 7483071598277461063}
   - component: {fileID: 3682341000388925046}
+  - component: {fileID: 8107399618641039694}
   m_Layer: 0
   m_Name: SM_Sign_Pythodd
   m_TagString: Sound Interaction
@@ -178,6 +193,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.6606202, y: 0.14767706, z: 0.9011427}
   m_Center: {x: -1.0526133, y: 0, z: -0.45057124}
+--- !u!65 &8107399618641039694
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806506428678219026}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6606202, y: 0.14767706, z: 0.9011427}
+  m_Center: {x: -1.0526133, y: 0, z: -0.45057124}
 --- !u!1 &863401559542343639
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +217,7 @@ GameObject:
   - component: {fileID: 2492432581565844480}
   - component: {fileID: 831282446689142715}
   - component: {fileID: 3071022449294130576}
+  - component: {fileID: 5043734197944591428}
   m_Layer: 0
   m_Name: Wndw3040Arch
   m_TagString: Untagged
@@ -260,6 +289,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5043734197944591428
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863401559542343639}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.90041, y: 0.9619999, z: 1.597484}
+  m_Center: {x: 7.9248047, y: 0, z: 0.19074205}
 --- !u!1 &1213992415359942129
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +314,7 @@ GameObject:
   - component: {fileID: 4347282015661023703}
   - component: {fileID: 181079552848592725}
   - component: {fileID: 1045328594946331002}
+  - component: {fileID: 273913839635931546}
   m_Layer: 0
   m_Name: Wndw4084
   m_TagString: Sound Interaction
@@ -356,6 +399,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15.90041, y: 8.327999, z: 2.3335996}
   m_Center: {x: 7.9248047, y: -3.5560002, z: 1.0667999}
+--- !u!65 &273913839635931546
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213992415359942129}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.90041, y: 8.327999, z: 2.3335996}
+  m_Center: {x: 7.9248047, y: -3.5560002, z: 1.0667999}
 --- !u!1 &1358723600938696654
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +423,7 @@ GameObject:
   - component: {fileID: 639909165914008943}
   - component: {fileID: 978692369905064256}
   - component: {fileID: 131290773331148485}
+  - component: {fileID: 359817779629579862}
   m_Layer: 0
   m_Name: WallPythodd.003
   m_TagString: Untagged
@@ -437,6 +494,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &359817779629579862
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358723600938696654}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.034985, y: 15.330849, z: 7.2858033}
+  m_Center: {x: 0, y: 0, z: 4.164912}
 --- !u!1 &1460069831835375175
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,6 +518,7 @@ GameObject:
   - component: {fileID: 3713141124769840022}
   - component: {fileID: 1656957541797971613}
   - component: {fileID: 107254443209908227}
+  - component: {fileID: 6318408449645689753}
   m_Layer: 0
   m_Name: GutterPythod
   m_TagString: Untagged
@@ -518,6 +589,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6318408449645689753
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460069831835375175}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.835928, y: 15.582264, z: 3.7589998}
+  m_Center: {x: 0, y: 0, z: -1.2756923}
 --- !u!1 &1663301017051651600
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +613,7 @@ GameObject:
   - component: {fileID: 6037419234898020647}
   - component: {fileID: 520933013142091628}
   - component: {fileID: 3406696097118978223}
+  - component: {fileID: 2577123765607329833}
   m_Layer: 0
   m_Name: Wndw2452
   m_TagString: Untagged
@@ -600,6 +685,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2577123765607329833
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663301017051651600}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.7024, y: 14.681194, z: 1.5209093}
+  m_Center: {x: 2.9464006, y: -7.315197, z: 0.6604547}
 --- !u!1 &1913520978841676554
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,6 +709,7 @@ GameObject:
   - component: {fileID: 1556822229820057017}
   - component: {fileID: 5784844307855095353}
   - component: {fileID: 820887329228426919}
+  - component: {fileID: 1178481152033559838}
   m_Layer: 0
   m_Name: Wndw3272
   m_TagString: Untagged
@@ -682,6 +781,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1178481152033559838
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913520978841676554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.90041, y: 1.8204246, z: 2.2319994}
+  m_Center: {x: 7.9248047, y: -0.4292125, z: 0.81279975}
 --- !u!1 &2740314080787397721
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +805,7 @@ GameObject:
   - component: {fileID: 7677989624391976205}
   - component: {fileID: 6193173907510909448}
   - component: {fileID: 8554793353404809200}
+  - component: {fileID: 3762287973355705994}
   m_Layer: 0
   m_Name: Wndw4072.001
   m_TagString: Untagged
@@ -764,6 +877,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3762287973355705994
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2740314080787397721}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.621958, y: 13.446671, z: 2.0288005}
+  m_Center: {x: 6.285577, y: 6.0899353, z: 0.9144002}
 --- !u!1 &3042584354453725977
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,6 +901,7 @@ GameObject:
   - component: {fileID: 7380853026849499500}
   - component: {fileID: 2800142130851603530}
   - component: {fileID: 3045329767104871320}
+  - component: {fileID: 1316613323134951043}
   m_Layer: 0
   m_Name: WndwArch
   m_TagString: Untagged
@@ -846,6 +973,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1316613323134951043
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3042584354453725977}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1494644, y: 1.1284729, z: 14.681198}
+  m_Center: {x: 0, y: 0.4642367, z: 7.315199}
 --- !u!1 &3309992179179542309
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +997,7 @@ GameObject:
   - component: {fileID: 8957496474697855577}
   - component: {fileID: 8425971377691768318}
   - component: {fileID: 1092921904207809675}
+  - component: {fileID: 1960380297405297752}
   m_Layer: 0
   m_Name: Wndw4030
   m_TagString: Untagged
@@ -928,6 +1069,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1960380297405297752
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3309992179179542309}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 13.082491, y: 12.255735, z: 0.962}
+  m_Center: {x: 5.9332447, y: -6.0959997, z: 0.38099998}
 --- !u!1 &3687709642515921877
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,6 +1093,7 @@ GameObject:
   - component: {fileID: 3838320421293912985}
   - component: {fileID: 8174864975087711607}
   - component: {fileID: 3868581206228817675}
+  - component: {fileID: 3662154183250407138}
   m_Layer: 0
   m_Name: Wndw5072
   m_TagString: Untagged
@@ -1010,6 +1165,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3662154183250407138
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3687709642515921877}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.2838, y: 14.681196, z: 2.0286546}
+  m_Center: {x: 1.8795985, y: -7.315198, z: 0.91432726}
 --- !u!1 &4139306038088689694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,6 +1189,7 @@ GameObject:
   - component: {fileID: 6067874796096503805}
   - component: {fileID: 6182971589898751483}
   - component: {fileID: 4261943018175345539}
+  - component: {fileID: 6337291559391133129}
   m_Layer: 0
   m_Name: Wndw2452.001
   m_TagString: Untagged
@@ -1092,6 +1261,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6337291559391133129
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4139306038088689694}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4351978, y: 14.681194, z: 1.5209093}
+  m_Center: {x: 0.8127994, y: -7.315197, z: 0.6604547}
 --- !u!1 &4491866739491367340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,6 +1285,7 @@ GameObject:
   - component: {fileID: 5166628190447998090}
   - component: {fileID: 5584915531756386823}
   - component: {fileID: 1088185030413606932}
+  - component: {fileID: 7366756841866627694}
   m_Layer: 0
   m_Name: WallPythodd.001
   m_TagString: Untagged
@@ -1173,6 +1356,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7366756841866627694
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4491866739491367340}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.69596, y: 14.833596, z: 0.9651999}
+  m_Center: {x: 0, y: 0, z: 0.39485505}
 --- !u!1 &4851945877411699316
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,6 +1380,7 @@ GameObject:
   - component: {fileID: 5435178160645899382}
   - component: {fileID: 8205406806068137048}
   - component: {fileID: 6749106478945214624}
+  - component: {fileID: 920663868980591498}
   m_Layer: 0
   m_Name: Wndw5084Arch
   m_TagString: Untagged
@@ -1255,6 +1452,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &920663868980591498
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4851945877411699316}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.2290096, y: 14.6811905, z: 2.3343494}
+  m_Center: {x: 1.8795986, y: -7.315197, z: 1.0671746}
 --- !u!1 &5137984292894164726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,6 +1476,7 @@ GameObject:
   - component: {fileID: 3945094213880666517}
   - component: {fileID: 3800409258770320267}
   - component: {fileID: 3014202520863616637}
+  - component: {fileID: 2170645193393516895}
   m_Layer: 0
   m_Name: ProfSpout
   m_TagString: Untagged
@@ -1336,6 +1547,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2170645193393516895
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5137984292894164726}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11174333, y: 0.111743316, z: 0}
+  m_Center: {x: 0.01077497, y: 0.010775105, z: 0}
 --- !u!1 &5282631195495998441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,6 +1571,7 @@ GameObject:
   - component: {fileID: 2891074030827348354}
   - component: {fileID: 430027981207986302}
   - component: {fileID: 4443887614777121796}
+  - component: {fileID: 7748930077332269526}
   m_Layer: 0
   m_Name: ProfGutter
   m_TagString: Untagged
@@ -1417,6 +1642,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7748930077332269526
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5282631195495998441}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20518334, y: 0.15239999, z: 2.1657332e-15}
+  m_Center: {x: -0.09032178, y: -0.076199785, z: 1.0828636e-15}
 --- !u!1 &5552191860221454970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,6 +1666,7 @@ GameObject:
   - component: {fileID: 3805609576197488189}
   - component: {fileID: 5276153650184601044}
   - component: {fileID: 939558097834828840}
+  - component: {fileID: 8551179360594816534}
   m_Layer: 0
   m_Name: Wndw2452.002
   m_TagString: Untagged
@@ -1499,6 +1738,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8551179360594816534
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5552191860221454970}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.2208, y: 7.975604, z: 1.5209103}
+  m_Center: {x: -6.7056003, y: -3.962399, z: 0.6604548}
 --- !u!1 &5556599764430525337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,6 +1762,7 @@ GameObject:
   - component: {fileID: 8384262877836199932}
   - component: {fileID: 3876256422982467540}
   - component: {fileID: 2858806010130936143}
+  - component: {fileID: 3733227790954371471}
   m_Layer: 0
   m_Name: Chumney
   m_TagString: Untagged
@@ -1581,6 +1834,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3733227790954371471
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5556599764430525337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6958692, y: 0.91955495, z: 1.5083109}
+  m_Center: {x: 0, y: 0, z: 0.75415593}
 --- !u!1 &6584688124931912978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,6 +1858,7 @@ GameObject:
   - component: {fileID: 1804449377095311122}
   - component: {fileID: 8617662316527311767}
   - component: {fileID: 1515950554363340531}
+  - component: {fileID: 1190962643463831978}
   m_Layer: 0
   m_Name: Wndw4084.001
   m_TagString: Untagged
@@ -1663,6 +1930,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1190962643463831978
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6584688124931912978}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.242804, y: 13.082491, z: 2.3336005}
+  m_Center: {x: 6.0959997, y: 5.9332457, z: 1.0668004}
 --- !u!1 &6627670572782150149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,9 +1954,10 @@ GameObject:
   - component: {fileID: 5814683585991227583}
   - component: {fileID: 1455672844997948554}
   - component: {fileID: 5855318376657815485}
+  - component: {fileID: 241955124503286133}
   m_Layer: 0
   m_Name: Pythodd
-  m_TagString: Untagged
+  m_TagString: Model
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1739,6 +2020,7 @@ MonoBehaviour:
   aClips:
   - {fileID: 8300000, guid: fbc489976de684ffcbc0cfd7c7841a33, type: 3}
   audioSource: {fileID: 5855318376657815485}
+  highlightMaterial: {fileID: 0}
   arCamera: {fileID: 8702551835349264000, guid: 190c987998297483792b22b3a9941e56,
     type: 3}
 --- !u!82 &5855318376657815485
@@ -1837,6 +2119,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &241955124503286133
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6627670572782150149}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7189053481449637263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1848,6 +2143,7 @@ GameObject:
   - component: {fileID: 4770015128928007671}
   - component: {fileID: 2155070001145572510}
   - component: {fileID: 5553536613225928851}
+  - component: {fileID: 5218992924090357963}
   m_Layer: 0
   m_Name: WallPythodd.002
   m_TagString: Untagged
@@ -1918,6 +2214,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5218992924090357963
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7189053481449637263}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.626947, y: 3.7817469, z: 0.1314704}
+  m_Center: {x: 9.747739, y: -0.94543636, z: 0}
 --- !u!1 &7190589157874300577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1929,6 +2238,7 @@ GameObject:
   - component: {fileID: 561154745555228905}
   - component: {fileID: 5332900229409024898}
   - component: {fileID: 2631079368959767205}
+  - component: {fileID: 2218825147868586533}
   m_Layer: 0
   m_Name: Wndw2440
   m_TagString: Untagged
@@ -2000,6 +2310,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2218825147868586533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7190589157874300577}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.90041, y: 2.5376804, z: 1.216}
+  m_Center: {x: 7.9248047, y: -0.86404026, z: 0}
 --- !u!1 &8008624116256679719
 GameObject:
   m_ObjectHideFlags: 0
@@ -2011,6 +2334,7 @@ GameObject:
   - component: {fileID: 3918612196974033355}
   - component: {fileID: 2846018014569647132}
   - component: {fileID: 2751008324911137043}
+  - component: {fileID: 3712371488328530522}
   m_Layer: 0
   m_Name: Gable
   m_TagString: Untagged
@@ -2083,6 +2407,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3712371488328530522
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8008624116256679719}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.275616, y: 13.001108, z: 3.194851}
+  m_Center: {x: 6.1538353, y: -5.9807773, z: 0.950349}
 --- !u!1 &8011804305728062977
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,6 +2431,7 @@ GameObject:
   - component: {fileID: 1533075706282647386}
   - component: {fileID: 5264615274702753630}
   - component: {fileID: 7528369472900884571}
+  - component: {fileID: 8491516515103544684}
   m_Layer: 0
   m_Name: 265Clarissa
   m_TagString: Untagged
@@ -2165,6 +2503,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8491516515103544684
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8011804305728062977}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.849609, y: 14.630396, z: 10.440899}
+  m_Center: {x: 0, y: 0, z: 5.2204494}
 --- !u!1 &8107320511607411165
 GameObject:
   m_ObjectHideFlags: 0
@@ -2176,6 +2527,7 @@ GameObject:
   - component: {fileID: 2590412990509097830}
   - component: {fileID: 6362507620926565867}
   - component: {fileID: 7946594953036129337}
+  - component: {fileID: 3885045531558234901}
   m_Layer: 0
   m_Name: Wndw4030.001
   m_TagString: Untagged
@@ -2247,6 +2599,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3885045531558234901
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8107320511607411165}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.428122, y: 14.694134, z: 0.962}
+  m_Center: {x: 1.6060607, y: -7.315198, z: 0.38099998}
 --- !u!1 &8427974372279556808
 GameObject:
   m_ObjectHideFlags: 0
@@ -2258,6 +2623,7 @@ GameObject:
   - component: {fileID: 3136742375161864346}
   - component: {fileID: 5731909315006067676}
   - component: {fileID: 5493733104001033517}
+  - component: {fileID: 2582827859549861300}
   m_Layer: 0
   m_Name: RoofPorchPythodd
   m_TagString: Untagged
@@ -2329,6 +2695,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2582827859549861300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8427974372279556808}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3216572, y: 4.665996, z: 3.5559993}
+  m_Center: {x: -0.17022997, y: -1.362974, z: 1.7781999}
 --- !u!1 &8448488013265326955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,6 +2719,7 @@ GameObject:
   - component: {fileID: 585857649990816704}
   - component: {fileID: 1949699416537701411}
   - component: {fileID: 1986082790584974885}
+  - component: {fileID: 2305000446476607704}
   m_Layer: 0
   m_Name: RoofPythodd
   m_TagString: Untagged
@@ -2411,6 +2791,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2305000446476607704
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8448488013265326955}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.772217, y: 15.544798, z: 6.3499994}
+  m_Center: {x: 0, y: 0, z: 0.17220734}
 --- !u!1 &8617284938803047556
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,6 +2815,7 @@ GameObject:
   - component: {fileID: 6548813570130924017}
   - component: {fileID: 4580179678278721094}
   - component: {fileID: 3933122260388679334}
+  - component: {fileID: 2779898078279700208}
   m_Layer: 0
   m_Name: hooman
   m_TagString: Untagged
@@ -2492,6 +2886,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2779898078279700208
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8617284938803047556}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8630364978756606588
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,6 +2910,7 @@ GameObject:
   - component: {fileID: 3046251574172457341}
   - component: {fileID: 1598625373028876833}
   - component: {fileID: 5160673897366254759}
+  - component: {fileID: 175192503360223750}
   m_Layer: 0
   m_Name: Wndw4072
   m_TagString: Untagged
@@ -2574,3 +2982,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &175192503360223750
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8630364978756606588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.90041, y: 8.3787985, z: 2.0287995}
+  m_Center: {x: 7.9248047, y: -3.5559993, z: 0.91439974}

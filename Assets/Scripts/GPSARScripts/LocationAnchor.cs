@@ -79,10 +79,6 @@ public class LocationAnchor : ScriptableObject
     private AnchorTrackingState trackingState;
 
 
-    [SerializeField]
-    private AudioClip[] audioClips;
-
-
     #endregion
 
     #region Properties
@@ -92,6 +88,8 @@ public class LocationAnchor : ScriptableObject
     public GameObject ObjectPrefab { get { return objectPrefab; } set { objectPrefab = value; } }
     public GameObject ModelPrefab { get { return modelPrefab; } set { modelPrefab = value; } }
     public GameObject CanvasPrefab { get { return canvasPrefab; } set { canvasPrefab = value; } }
+    public GameObject CanvasInfoCard { get { return canvasInfoCard; } set { canvasInfoCard = value; } }
+
 
     public LatitudeLongitudeStruct Coordinates { get { return coordinates; } set { coordinates = value; } }
 

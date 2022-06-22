@@ -10,15 +10,17 @@ public class LocTagManager : MonoBehaviour
     {
         public LocationAnchor anchor;
         public AnchorCanvasInterface anchorCanvas;
+        public AnchorCanvasInterface anchorCanvasInfoCard;
         public AnchorObjInterface anchorObject;
         public Vector3 lastUpdateCameraPosition;
         public Vector3 lastUpdatePositionRelativeToCamera;
 
-        public AnchorTrackerInfo(LocationAnchor anchor, AnchorCanvasInterface poiCanvas, AnchorObjInterface poiObject)
+        public AnchorTrackerInfo(LocationAnchor anchor, AnchorCanvasInterface poiCanvas, AnchorObjInterface poiObject, AnchorCanvasInterface poiInfoCard)
         {
             this.anchor = anchor;
             this.anchorCanvas = poiCanvas;
             this.anchorObject = poiObject;
+            this.anchorCanvasInfoCard = poiInfoCard;
         }
     }
 
@@ -181,6 +183,8 @@ public class LocTagManager : MonoBehaviour
     }
 
 
+    //  Point of Interest Functions  ---------------------------------------------------------------------------------------------------------------------------------
+
 
     // Move all tracked anchor objects
 
@@ -211,9 +215,9 @@ public class LocTagManager : MonoBehaviour
             {
                 if (!anchor.FarTracking)
                 {
+                    anchor.TrackingState = AnchorTrackingState.CloseTracking;
                     CreateObjectsForPOI(anchor);
                 }
-                anchor.TrackingState = AnchorTrackingState.CloseTracking;
             }
             else if (!anchor.Tracking && distanceBetween <= anchor.TrackingRadius)
             {
@@ -237,6 +241,7 @@ public class LocTagManager : MonoBehaviour
             }
 
 
+
             AnchorTrackerInfo trackerData = createdTrackerList.Find(x => x.anchor == anchor);
 
             if (trackerData == null) continue;
@@ -245,6 +250,93 @@ public class LocTagManager : MonoBehaviour
 
             AnchorCanvasInterface poiCanvas = trackerData.anchorCanvas;
             AnchorObjInterface poiObject = trackerData.anchorObject;
+            AnchorCanvasInterface poiInfoCard = trackerData.anchorCanvasInfoCard;
+
+
+
+            //switch(anchor.TrackingState)
+            //{
+            //    case AnchorTrackingState.FarTracking:
+            //        poiCanvas.gameObject.SetActive(true);
+            //        poiInfoCard.gameObject.SetActive(false);
+            //        break;
+            //    case AnchorTrackingState.CloseTracking:
+            //        if (poiInfoCard.CheckVisibility())
+            //        {
+            //            Debug.Log("266");
+            //            poiCanvas.gameObject.SetActive(false);
+            //            poiInfoCard.gameObject.SetActive(true);
+            //        }
+            //        else
+            //        {
+            //            Debug.Log("272");
+            //            poiCanvas.gameObject.SetActive(true);
+            //            poiInfoCard.gameObject.SetActive(false);
+            //        }                        
+            //        break;
+            //    case AnchorTrackingState.NotTracking:
+            //        break;
+
+            //}
+
+
+            switch (anchor.TrackingState)
+            {
+                case AnchorTrackingState.NotTracking:
+                    break;
+                case AnchorTrackingState.FarTracking:
+                    if (poiCanvas != null)
+                    {
+                        poiCanvas.gameObject.SetActive(true);
+
+                    }
+                    if (poiInfoCard != null)
+                    {
+                        poiInfoCard.gameObject.SetActive(false);
+                    }
+                    break;
+                case AnchorTrackingState.CloseTracking:
+                    if (poiCanvas != null)
+                    {
+                        if (poiInfoCard != null)
+                        {
+                            if (poiInfoCard.CheckVisibility())
+                            {
+                                poiCanvas.gameObject.SetActive(false);
+                                poiInfoCard.gameObject.SetActive(true);
+                                poiCanvas = null;
+                            }
+                            else
+                            {
+                                poiCanvas.gameObject.SetActive(true);
+                                poiInfoCard.gameObject.SetActive(false);
+                                break;
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        if (poiInfoCard != null)
+                        {
+                            if (poiInfoCard.CheckVisibility())
+                            {
+                                poiInfoCard.gameObject.SetActive(true);
+                            }
+                            else
+                            {
+                                poiInfoCard.gameObject.SetActive(false);
+                                break;
+                            }
+
+                        }
+                    }
+                    break;
+
+
+            }
+
+
 
             if (onlyUpdateHeight)
             {
@@ -290,42 +382,9 @@ public class LocTagManager : MonoBehaviour
                 poiCanvas.UpdateDistance(distanceBetween);
             }
 
+
         }
 
-    }
-
-    private void RotatePOIsRelativeToNorth(bool forceUpdate = false)
-    {
-        float trueNorthHeadingDifference = arTrueNorthFinder != null ? arTrueNorthFinder.Heading : 0;
-
-        RotatePOIsRelativeToNorth(trueNorthHeadingDifference, forceUpdate);
-    }
-
-
-    // Only rotates the anchor relative to true north. Doesn't affect the positions.
-
-    // <param name="heading"></param>
-    private void RotatePOIsRelativeToNorth(float heading, bool forceUpdate = false)
-    {
-
-        for (int i = 0; i < createdTrackerList.Count; i++)
-        {
-            AnchorTrackerInfo trackerData = createdTrackerList[i];
-
-            if (trackerData == null || trackerData.anchor == null || (trackerData.anchor.CloseTracking && !forceUpdate)) continue;
-
-            Vector3 newPos = trackerData.lastUpdateCameraPosition + (Quaternion.AngleAxis(heading, Vector3.up) * trackerData.lastUpdatePositionRelativeToCamera);
-
-            if (trackerData.anchorCanvas != null)
-            {
-                trackerData.anchorCanvas.UpdatePositionXZ(newPos);
-            }
-
-            if (trackerData.anchorObject != null)
-            {
-                trackerData.anchorObject.UpdatePositionXZ(newPos);
-            }
-        }
     }
 
 
@@ -346,9 +405,11 @@ public class LocTagManager : MonoBehaviour
         GameObject objectGo = null;
         GameObject modelGo = null;
         GameObject poiCanvasGo = null;
+        GameObject poiInfoCardGo = null;
 
         AnchorObjInterface poiObject = null;
         AnchorCanvasInterface poiCanvas = null;
+        AnchorCanvasInterface poiInfoCard = null;
 
         if (anchor.ModelPrefab != null)
         {
@@ -376,17 +437,29 @@ public class LocTagManager : MonoBehaviour
 
 
 
-
         if (anchor.CanvasPrefab != null)
         {
-            poiCanvasGo = Instantiate(anchor.CanvasPrefab, Vector3.zero, Quaternion.identity, null);
+            poiCanvasGo = Instantiate(anchor.CanvasPrefab, Vector3.zero, Quaternion.identity, null); //To display the canvas
 
             poiCanvas = poiCanvasGo.GetComponent<AnchorCanvasInterface>();
 
             poiCanvas.Setup(anchor, arCamera);
         }
 
-        AnchorTrackerInfo trackerData = new AnchorTrackerInfo(anchor, poiCanvas, poiObject);
+
+        if (anchor.CanvasInfoCard != null)
+        {
+            poiInfoCardGo = Instantiate(anchor.CanvasInfoCard, Vector3.zero, Quaternion.identity, null);
+
+            poiInfoCard = poiInfoCardGo.GetComponent<AnchorCanvasInterface>();
+
+            poiInfoCard.Setup(anchor, arCamera);
+
+
+        }
+
+
+        AnchorTrackerInfo trackerData = new AnchorTrackerInfo(anchor, poiCanvas, poiObject, poiInfoCard);
         createdTrackerList.Add(trackerData);
     }
 
@@ -485,6 +558,43 @@ public class LocTagManager : MonoBehaviour
 
             createdTrackerList.Clear();
 
+        }
+    }
+
+
+
+
+    private void RotatePOIsRelativeToNorth(bool forceUpdate = false)
+    {
+        float trueNorthHeadingDifference = arTrueNorthFinder != null ? arTrueNorthFinder.Heading : 0;
+
+        RotatePOIsRelativeToNorth(trueNorthHeadingDifference, forceUpdate);
+    }
+
+
+    // Only rotates the anchor relative to true north. Doesn't affect the positions.
+
+    // <param name="heading"></param>
+    private void RotatePOIsRelativeToNorth(float heading, bool forceUpdate = false)
+    {
+
+        for (int i = 0; i < createdTrackerList.Count; i++)
+        {
+            AnchorTrackerInfo trackerData = createdTrackerList[i];
+
+            if (trackerData == null || trackerData.anchor == null || (trackerData.anchor.CloseTracking && !forceUpdate)) continue;
+
+            Vector3 newPos = trackerData.lastUpdateCameraPosition + (Quaternion.AngleAxis(heading, Vector3.up) * trackerData.lastUpdatePositionRelativeToCamera);
+
+            if (trackerData.anchorCanvas != null)
+            {
+                trackerData.anchorCanvas.UpdatePositionXZ(newPos);
+            }
+
+            if (trackerData.anchorObject != null)
+            {
+                trackerData.anchorObject.UpdatePositionXZ(newPos);
+            }
         }
     }
 

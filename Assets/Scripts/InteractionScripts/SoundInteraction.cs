@@ -7,10 +7,13 @@ public class SoundInteraction : MonoBehaviour
 {
     public AudioClip[] aClips;
     public AudioSource audioSource;
+    public Material highlightMaterial;
     string btnTxt;
 
     [SerializeField]
     private Camera arCamera;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +36,7 @@ public class SoundInteraction : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 btnTxt = hit.transform.tag;
+                Debug.Log(btnTxt);
                 if (btnTxt == "Sound Interaction")
                 {
                     audioSource.clip = aClips[0];
@@ -42,8 +46,11 @@ public class SoundInteraction : MonoBehaviour
         }
 
 
+
+
+
         //Non touch based sound interaction using Camera Raycast
-        //RaycastHit hit;
+        //RaycastHit cameraHit;
 
         //if (Physics.Raycast(arCamera.transform.position, arCamera.transform.forward, out hit, 50.0f))
         //{
@@ -69,4 +76,6 @@ public class SoundInteraction : MonoBehaviour
         //    }
         //}
     }
-    }
+
+
+}

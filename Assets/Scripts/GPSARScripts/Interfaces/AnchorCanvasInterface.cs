@@ -11,6 +11,8 @@ public abstract class AnchorCanvasInterface : MonoBehaviour
     public abstract void UpdatePosition(Vector3 worldPosition, float groundLevel, float devicePosY);
     public abstract void UpdatePositionXZ(Vector3 newPos);
     public abstract void UpdatePositionY(float groundLevelY, float devicePosY);
+    public virtual bool CheckVisibility() { return false; }
+
 
     public LocationAnchor PointOfInterest { get { return pointOfInterest; } set { pointOfInterest = value; } }
 

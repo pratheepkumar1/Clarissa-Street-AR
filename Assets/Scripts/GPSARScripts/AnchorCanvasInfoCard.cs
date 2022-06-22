@@ -6,33 +6,31 @@ using UnityEngine.EventSystems;
 using TMPro;
 
 
-public class AnchorCanvasInfoCard : MonoBehaviour
+public class AnchorCanvasInfoCard : AnchorCanvasInterface
 {
 
     [SerializeField]
-    private TextMeshProUGUI ModelName;
+    private Text ModelName;
 
     [SerializeField]
-    private TextMeshProUGUI ModelDescription;
+    private Text ModelDescription;
 
-    protected LocationAnchor pointOfInterest;
+    private Camera arCamera;
+
+    private Transform cameraTransform;
+
+    void Start()
+    {
+        //renderer = GetComponent<MeshRenderer>();
+        //renderer.enabled = false;
+    }
 
 
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-        
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
-
-    public void InitializeInfoCard(LocationAnchor anchor, Camera arCamera)
+    public override void Setup(LocationAnchor anchor, Camera arCamera)
     {
         this.pointOfInterest = anchor;
+        this.arCamera = arCamera;
+        this.cameraTransform = arCamera.transform;
         UpdateInfo();
     }
 
@@ -52,4 +50,49 @@ public class AnchorCanvasInfoCard : MonoBehaviour
 
         }
     }
+
+
+    public override bool CheckVisibility()
+    {
+        Debug.Log("57");
+        RaycastHit cameraHit;
+        if (Physics.Raycast(arCamera.transform.position, arCamera.transform.forward, out cameraHit, Mathf.Infinity))
+        {
+            Debug.Log("61");
+            Debug.Log(cameraHit.transform.parent.tag);
+            Debug.Log(cameraHit.distance);
+
+            if (cameraHit.transform.parent.tag == "Model" && cameraHit.distance < 15.0f)
+            {
+                Debug.Log("64");
+                return true;
+            }
+            Debug.Log("67");
+            return false;
+        }
+        return false;
+    }
+
+
+    public override void UpdateDistance(float distance)
+    {
+
+    }
+
+    public override void UpdatePosition(Vector3 worldPosition, float groundLevel, float devicePosY)
+    {
+    }
+
+    public override void UpdatePositionXZ(Vector3 newPos)
+    {
+    }
+
+    public override void UpdatePositionY(float groundLevelY, float devicePosY)
+    {
+    
+    }
+
+
 }
+
+
