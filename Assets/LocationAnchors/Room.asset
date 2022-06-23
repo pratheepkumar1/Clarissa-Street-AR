@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebcdb6ca15d580740b1c8ebe03cb54e4, type: 3}
   m_Name: Room
   m_EditorClassIdentifier: 
-  poiName: Room
-  description: Room
+  poiName: Pythodd Club
+  description: The Pythodd was a jazz club in the Corn Hill neighborhood that attracted
+    big-name musicians like Pee Wee Ellis, Ray Bryant and Wes Montgomery as well
+    as aspiring local talent like the Mangione brothers.
   objectPrefab: {fileID: 3065208693967968302, guid: b345f8d9f9c2da54ba12cc43e8e93a2a,
     type: 3}
   modelPrefab: {fileID: 6627670572782150149, guid: be3dd127919ad437a9a3276f94fee27e,
@@ -31,5 +33,3 @@ MonoBehaviour:
   closeTrackingExitMargin: 100
   facingDirectionHeading: 0
   relativeHeight: 0
-  audioClips:
-  - {fileID: 8300000, guid: fbc489976de684ffcbc0cfd7c7841a33, type: 3}

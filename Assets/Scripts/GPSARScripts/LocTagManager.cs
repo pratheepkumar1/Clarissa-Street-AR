@@ -47,6 +47,8 @@ public class LocTagManager : MonoBehaviour
 
     private Text txt;
 
+    private string interactTag;
+
 
     private List<LocationAnchor> PointOfInterests
     {
@@ -119,11 +121,35 @@ public class LocTagManager : MonoBehaviour
         for (int i = 0; i < createdTrackerList.Count; i++)
         {
             AnchorObjInterface poiObject = createdTrackerList[i].anchorObject;
+            AnchorCanvasInterface poiInfoCard = createdTrackerList[i].anchorCanvasInfoCard;
 
             if (poiObject != null)
             {
                 poiObject.SetVisibility(arCamera.farClipPlane > ((poiObject.transform.position - arCameraTransform.position).magnitude + 2f));
             }
+
+
+            if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            {
+                // Get a ray from the camera to the point where the user has touches on the screen (so the parameter is user touch position)
+                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+                RaycastHit hit;
+                Debug.Log("touch Detected");
+                //Check if touch has hit an object
+                if (Physics.Raycast(ray, out hit))
+                {
+                    Debug.Log("touch Detected");
+                    interactTag = hit.transform.tag;
+                    if (interactTag == "UI Interaction")
+                    {
+                        poiInfoCard.gameObject.SetActive(true);
+                    }
+
+                }
+            }
+
+
+
         }
     }
 
@@ -254,88 +280,119 @@ public class LocTagManager : MonoBehaviour
 
 
 
-            //switch(anchor.TrackingState)
+            switch (anchor.TrackingState)
+            {
+                case AnchorTrackingState.FarTracking:
+                    poiCanvas.gameObject.SetActive(true);
+                    poiInfoCard.gameObject.SetActive(false);
+                    break;
+                case AnchorTrackingState.CloseTracking:
+                    if (poiInfoCard.CheckVisibility())
+                    {
+                        Debug.Log("266");
+                        poiCanvas.gameObject.SetActive(false);
+                        //poiInfoCard.gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        Debug.Log("272");
+                        poiCanvas.gameObject.SetActive(true);
+                        //poiInfoCard.gameObject.SetActive(false);
+                    }
+                    break;
+                case AnchorTrackingState.NotTracking:
+                    break;
+
+            }
+
+
+
+            //if (poiInfoCard.CheckMoveAroundEnabled())
             //{
-            //    case AnchorTrackingState.FarTracking:
+            //    poiInfoCard.gameObject.SetActive(false);
+            //    poiCanvas.gameObject.SetActive(false);
+            //}
+            //else
+            //{
+            //    if (poiInfoCard.CheckVisibility())
+            //    {
+            //        Debug.Log("266");
+            //        poiCanvas.gameObject.SetActive(false);
+            //        poiInfoCard.gameObject.SetActive(true);
+            //    }
+            //    else
+            //    {
+            //        Debug.Log("272");
             //        poiCanvas.gameObject.SetActive(true);
             //        poiInfoCard.gameObject.SetActive(false);
+            //    }
+            //}
+            //break;
+
+            //switch (anchor.TrackingState)
+            //{
+            //    case AnchorTrackingState.NotTracking:
+            //        break;
+            //    case AnchorTrackingState.FarTracking:
+            //        if (poiCanvas != null)
+            //        {
+            //            poiCanvas.gameObject.SetActive(true);
+
+            //        }
+            //        if (poiInfoCard != null)
+            //        {
+            //            poiInfoCard.gameObject.SetActive(false);
+            //        }
             //        break;
             //    case AnchorTrackingState.CloseTracking:
-            //        if (poiInfoCard.CheckVisibility())
+            //        if (poiCanvas != null)
             //        {
-            //            Debug.Log("266");
-            //            poiCanvas.gameObject.SetActive(false);
-            //            poiInfoCard.gameObject.SetActive(true);
+            //            if (poiInfoCard != null)
+            //            {
+            //                if (poiInfoCard.CheckVisibility())
+            //                {
+            //                    poiCanvas.gameObject.SetActive(false);
+            //                    poiInfoCard.gameObject.SetActive(true);
+            //                    break;
+            //                    //poiCanvas = null;
+            //                }
+            //                else
+            //                {
+            //                    poiCanvas.gameObject.SetActive(true);
+            //                    poiInfoCard.gameObject.SetActive(false);
+            //                    break;
+            //                }
+
+            //            }
             //        }
             //        else
             //        {
-            //            Debug.Log("272");
-            //            poiCanvas.gameObject.SetActive(true);
-            //            poiInfoCard.gameObject.SetActive(false);
-            //        }                        
+            //            if (poiInfoCard != null)
+            //            {
+            //                if (poiInfoCard.CheckVisibility())
+            //                {
+            //                    poiInfoCard.gameObject.SetActive(true);
+            //                }
+            //                else
+            //                {
+            //                    poiInfoCard.gameObject.SetActive(false);
+            //                    break;
+            //                }
+
+            //            }
+            //        }
             //        break;
-            //    case AnchorTrackingState.NotTracking:
-            //        break;
+
 
             //}
 
 
-            switch (anchor.TrackingState)
-            {
-                case AnchorTrackingState.NotTracking:
-                    break;
-                case AnchorTrackingState.FarTracking:
-                    if (poiCanvas != null)
-                    {
-                        poiCanvas.gameObject.SetActive(true);
-
-                    }
-                    if (poiInfoCard != null)
-                    {
-                        poiInfoCard.gameObject.SetActive(false);
-                    }
-                    break;
-                case AnchorTrackingState.CloseTracking:
-                    if (poiCanvas != null)
-                    {
-                        if (poiInfoCard != null)
-                        {
-                            if (poiInfoCard.CheckVisibility())
-                            {
-                                poiCanvas.gameObject.SetActive(false);
-                                poiInfoCard.gameObject.SetActive(true);
-                                poiCanvas = null;
-                            }
-                            else
-                            {
-                                poiCanvas.gameObject.SetActive(true);
-                                poiInfoCard.gameObject.SetActive(false);
-                                break;
-                            }
-
-                        }
-                    }
-                    else
-                    {
-                        if (poiInfoCard != null)
-                        {
-                            if (poiInfoCard.CheckVisibility())
-                            {
-                                poiInfoCard.gameObject.SetActive(true);
-                            }
-                            else
-                            {
-                                poiInfoCard.gameObject.SetActive(false);
-                                break;
-                            }
-
-                        }
-                    }
-                    break;
-
-
-            }
-
+            //if (poiInfoCard.CheckMoveAroundEnabled())
+            //{
+            //    Debug.Log("Checking if move around enabled");
+            //    poiInfoCard.gameObject.SetActive(false);
+            //    Debug.Log("Info Card Disabled");
+            //}
 
 
             if (onlyUpdateHeight)
@@ -455,6 +512,7 @@ public class LocTagManager : MonoBehaviour
 
             poiInfoCard.Setup(anchor, arCamera);
 
+            poiInfoCard.gameObject.SetActive(false);
 
         }
 

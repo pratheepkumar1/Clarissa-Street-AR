@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Sound Interaction
   - Model
+  - UI Interaction
   layers:
   - Default
   - TransparentFX

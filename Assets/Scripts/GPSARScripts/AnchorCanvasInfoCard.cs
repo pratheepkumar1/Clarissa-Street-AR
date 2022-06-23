@@ -10,19 +10,27 @@ public class AnchorCanvasInfoCard : AnchorCanvasInterface
 {
 
     [SerializeField]
-    private Text ModelName;
+    private GameObject InfoCard;
 
     [SerializeField]
-    private Text ModelDescription;
+    private TextMeshProUGUI ModelName;
+
+    [SerializeField]
+    private TextMeshProUGUI ModelDescription;
 
     private Camera arCamera;
 
     private Transform cameraTransform;
 
+    public bool isMoveAroundEnabled;
+
     void Start()
     {
         //renderer = GetComponent<MeshRenderer>();
         //renderer.enabled = false;
+        isMoveAroundEnabled = false;
+        //Debug.Log(isMoveAroundEnabled);
+
     }
 
 
@@ -58,21 +66,39 @@ public class AnchorCanvasInfoCard : AnchorCanvasInterface
         RaycastHit cameraHit;
         if (Physics.Raycast(arCamera.transform.position, arCamera.transform.forward, out cameraHit, Mathf.Infinity))
         {
-            Debug.Log("61");
-            Debug.Log(cameraHit.transform.parent.tag);
-            Debug.Log(cameraHit.distance);
+            //Debug.Log("61");
+            //Debug.Log(cameraHit.transform.parent.tag);
+            //Debug.Log(cameraHit.distance);
 
             if (cameraHit.transform.parent.tag == "Model" && cameraHit.distance < 15.0f)
             {
-                Debug.Log("64");
+                //Debug.Log("64");
                 return true;
             }
-            Debug.Log("67");
+            //Debug.Log("67");
             return false;
         }
         return false;
     }
 
+
+    public void Dismiss()
+    {
+        InfoCard.SetActive(false);
+    }
+
+
+    public void EnableMoveAround()
+    {
+        isMoveAroundEnabled = true;
+        Debug.Log(isMoveAroundEnabled);
+    }
+
+    public override bool CheckMoveAroundEnabled()
+    {
+        Debug.Log("Move Around Enabled");
+        return isMoveAroundEnabled;
+    }
 
     public override void UpdateDistance(float distance)
     {

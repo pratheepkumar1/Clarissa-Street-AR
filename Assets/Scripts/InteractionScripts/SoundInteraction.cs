@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class SoundInteraction : MonoBehaviour
 {
     public AudioClip[] aClips;
     public AudioSource audioSource;
-    public Material highlightMaterial;
+    public GameObject musicalNotes;
     string btnTxt;
 
     [SerializeField]
     private Camera arCamera;
 
+    private GameObject musicAnimation;
 
 
     // Start is called before the first frame update
@@ -36,17 +38,52 @@ public class SoundInteraction : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 btnTxt = hit.transform.tag;
-                Debug.Log(btnTxt);
-                if (btnTxt == "Sound Interaction")
+                if (btnTxt == "Sound Interaction" && !audioSource.isPlaying)
                 {
                     audioSource.clip = aClips[0];
                     audioSource.Play();
+                    musicAnimation = Instantiate(musicalNotes, hit.transform.position, Quaternion.identity, hit.transform);
+                    //isPlaying = true;
                 }
+                else if(btnTxt == "Sound Interaction" && audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                    Destroy(musicAnimation);
+                }
+          
             }
         }
 
+        if(musicAnimation != null)
+        {
+            if (!audioSource.isPlaying)
+            {
+                Destroy(musicAnimation);
+            }
+        }
+
+        //Transform GetClosestEnemy(Transform[] enemies)
+        //{
+        //    Transform bestTarget = null;
+        //    float closestDistanceSqr = Mathf.Infinity;
+        //    Vector3 currentPosition = transform.position;
+        //    foreach (Transform potentialTarget in enemies)
+        //    {
+        //        Vector3 directionToTarget = potentialTarget.position - currentPosition;
+        //        float dSqrToTarget = directionToTarget.sqrMagnitude;
+        //        if (dSqrToTarget < closestDistanceSqr)
+        //        {
+        //            closestDistanceSqr = dSqrToTarget;
+        //            bestTarget = potentialTarget;
+        //        }
+        //    }
+        //    return bestTarget;
+        //}
 
 
+        //RaycastHit objHit;
+        //if(Physics.Raycast(arCamera.transform.position, arCamera.transform.forward, out objHit, Mathf.Infinity))
+        //Debug.Log(objHit.transform.parent.transform);
 
 
         //Non touch based sound interaction using Camera Raycast

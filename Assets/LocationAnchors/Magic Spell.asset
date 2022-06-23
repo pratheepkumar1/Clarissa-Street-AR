@@ -13,17 +13,16 @@ MonoBehaviour:
   m_Name: Magic Spell
   m_EditorClassIdentifier: 
   poiName: Pythodd
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit
-    amet erat efficitur, commodo mauris vel, elementum nulla. Aliquam erat volutpat.
-    Ut gravida pellentesque tempus. Mauris vel enim vel dui venenatis ullamcorper.
-    Donec iaculis tristique nunc, id luctus turpis iaculis ut. Duis cursus ac urna
-    vel luctus. Suspendisse potenti. Aliquam suscipit, massa in iaculis sodales,
-    risus quam malesuada nunc, eget euismod mauris ipsum at ligula.
+  description: The Pythodd was a jazz club in the Corn Hill neighborhood that attracted
+    big-name musicians like Pee Wee Ellis, Ray Bryant and Wes Montgomery as well
+    as aspiring local talent like the Mangione brothers.
   objectPrefab: {fileID: 3065208693967968302, guid: b345f8d9f9c2da54ba12cc43e8e93a2a,
     type: 3}
-  modelPrefab: {fileID: 919132149155446097, guid: 8dd2c9ed03e7c4e13a1cdef51fbc7916,
+  modelPrefab: {fileID: 6627670572782150149, guid: be3dd127919ad437a9a3276f94fee27e,
     type: 3}
   canvasPrefab: {fileID: 1531612421245766800, guid: 4d349255133f0b64a9b83edd56905f11,
+    type: 3}
+  canvasInfoCard: {fileID: 7126367677138617232, guid: 2d7f2bcba2d4e408189c37d44c9b3763,
     type: 3}
   coordinates:
     lat: 43.08614630992355
