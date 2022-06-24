@@ -10,6 +10,7 @@ public class SoundInteraction : MonoBehaviour
     public AudioSource audioSource;
     public GameObject musicalNotes;
     string btnTxt;
+    string autoInteractTxt;
 
     [SerializeField]
     private Camera arCamera;
@@ -88,18 +89,6 @@ public class SoundInteraction : MonoBehaviour
 
         //Non touch based sound interaction using Camera Raycast
         //RaycastHit cameraHit;
-
-        //if (Physics.Raycast(arCamera.transform.position, arCamera.transform.forward, out hit, 50.0f))
-        //{
-        //    btnTxt = hit.transform.tag;
-        //    if (btnTxt == "Sound Interaction")
-        //    {
-        //        audioSource.clip = aClips[0];
-        //        audioSource.Play();
-        //    }
-
-        //}
-
 
         //Non touch based sound interaction usign Frustrum Planes
         //    foreach (Transform child in transform)

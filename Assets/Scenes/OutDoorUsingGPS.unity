@@ -328,6 +328,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 44871ee76d4df40bba79629e6973689d, type: 2}
   - {fileID: 11400000, guid: 15be9ba0709fa4662b366a6660610211, type: 2}
   - {fileID: 11400000, guid: 18b7fb2d63d734569a90ca863d2ffdfc, type: 2}
+  - {fileID: 11400000, guid: 462f9ef88dcea491c9f60e38959badc8, type: 2}
   arTrueNorthFinder: {fileID: 388525036}
   arCamera: {fileID: 8702551835328661067}
   locationProvider: {fileID: 1346145191}
