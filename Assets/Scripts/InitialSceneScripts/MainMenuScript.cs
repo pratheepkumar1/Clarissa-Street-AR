@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
 
+    private void Start()
+    {
+        Screen.orientation = ScreenOrientation.Portrait;
+    }
+
+
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);

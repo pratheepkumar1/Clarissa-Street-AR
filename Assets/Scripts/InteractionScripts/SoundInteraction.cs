@@ -41,9 +41,26 @@ public class SoundInteraction : MonoBehaviour
                 btnTxt = hit.transform.tag;
                 if (btnTxt == "Sound Interaction" && !audioSource.isPlaying)
                 {
-                    audioSource.clip = aClips[0];
-                    audioSource.Play();
-                    musicAnimation = Instantiate(musicalNotes, hit.transform.position, Quaternion.identity, hit.transform);
+                    switch(hit.transform.parent.name)
+                    {
+                        case "Front Window Right":
+                            audioSource.clip = aClips[0];
+                            audioSource.Play();
+                            musicAnimation = Instantiate(musicalNotes, hit.transform.position, Quaternion.identity, hit.transform);
+                            break;
+                        case "Front Window Left":
+                            audioSource.clip = aClips[1];
+                            audioSource.Play();
+                            musicAnimation = Instantiate(musicalNotes, hit.transform.position, Quaternion.identity, hit.transform);
+                            break;
+                        default:
+                            break;
+                    }
+
+
+                    //audioSource.clip = aClips[0];
+                    //audioSource.Play();
+                    //musicAnimation = Instantiate(musicalNotes, hit.transform.position, Quaternion.identity, hit.transform);
                     //isPlaying = true;
                 }
                 else if(btnTxt == "Sound Interaction" && audioSource.isPlaying)
@@ -62,6 +79,28 @@ public class SoundInteraction : MonoBehaviour
                 Destroy(musicAnimation);
             }
         }
+
+
+        //RaycastHit rayHit;
+
+        //if (Physics.Raycast(arCamera.transform.position, arCamera.transform.forward, out rayHit, 20000.0f))
+        //{
+        //    autoInteractTxt = rayHit.transform.tag;
+        //    if (autoInteractTxt == "Window Image")
+        //    {
+        //        Debug.Log("Window Detected");
+        //    }
+
+        //    else
+        //    {
+        //        Debug.Log("Camera Ray Missed");
+        //    }
+
+        //}
+        //else
+        //{
+        //    Debug.Log("No Ray Passed");
+        //}
 
         //Transform GetClosestEnemy(Transform[] enemies)
         //{

@@ -122,31 +122,34 @@ public class LocTagManager : MonoBehaviour
         {
             AnchorObjInterface poiObject = createdTrackerList[i].anchorObject;
             AnchorCanvasInterface poiInfoCard = createdTrackerList[i].anchorCanvasInfoCard;
+            LocationAnchor poiAnchor = createdTrackerList[i].anchor;
+
 
             if (poiObject != null)
             {
                 poiObject.SetVisibility(arCamera.farClipPlane > ((poiObject.transform.position - arCameraTransform.position).magnitude + 2f));
             }
 
+            //poiAnchor.ModelPrefab.GetComponent<CueTrigger>().TriggerCue(arCamera);
 
-            if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
-            {
-                // Get a ray from the camera to the point where the user has touches on the screen (so the parameter is user touch position)
-                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-                RaycastHit hit;
-                Debug.Log("touch Detected");
-                //Check if touch has hit an object
-                if (Physics.Raycast(ray, out hit))
-                {
-                    Debug.Log("touch Detected");
-                    interactTag = hit.transform.tag;
-                    if (interactTag == "UI Interaction")
-                    {
-                        poiInfoCard.gameObject.SetActive(true);
-                    }
+            //if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            //{
+            //    // Get a ray from the camera to the point where the user has touches on the screen (so the parameter is user touch position)
+            //    Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            //    RaycastHit hit;
+            //    Debug.Log("touch Detected");
+            //    //Check if touch has hit an object
+            //    if (Physics.Raycast(ray, out hit))
+            //    {
+            //        Debug.Log("touch Detected");
+            //        interactTag = hit.transform.tag;
+            //        if (interactTag == "UI Interaction")
+            //        {
+            //            poiInfoCard.gameObject.SetActive(true);
+            //        }
 
-                }
-            }
+            //    }
+            //}
 
 
 

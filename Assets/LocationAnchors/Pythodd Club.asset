@@ -28,8 +28,8 @@ MonoBehaviour:
     lat: 43.151053
     lon: -77.619016
   trackingRadius: 100
-  trackingExitMargin: 20
-  closeTrackingRadius: 20
-  closeTrackingExitMargin: 10
+  trackingExitMargin: 30
+  closeTrackingRadius: 200
+  closeTrackingExitMargin: 100
   facingDirectionHeading: 179
   relativeHeight: 0

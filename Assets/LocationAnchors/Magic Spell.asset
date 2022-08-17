@@ -18,18 +18,18 @@ MonoBehaviour:
     as aspiring local talent like the Mangione brothers.
   objectPrefab: {fileID: 3065208693967968302, guid: b345f8d9f9c2da54ba12cc43e8e93a2a,
     type: 3}
-  modelPrefab: {fileID: 6627670572782150149, guid: be3dd127919ad437a9a3276f94fee27e,
+  modelPrefab: {fileID: 2736713258761197405, guid: 29913c2b4b90d4777837114882e03199,
     type: 3}
   canvasPrefab: {fileID: 1531612421245766800, guid: 4d349255133f0b64a9b83edd56905f11,
     type: 3}
   canvasInfoCard: {fileID: 7126367677138617232, guid: 2d7f2bcba2d4e408189c37d44c9b3763,
     type: 3}
   coordinates:
-    lat: 43.08614630992355
-    lon: -77.6762520245461
-  trackingRadius: 500
-  trackingExitMargin: 200
-  closeTrackingRadius: 30
-  closeTrackingExitMargin: 10
+    lat: 43.0862693786621
+    lon: -77.6762161254883
+  trackingRadius: 100
+  trackingExitMargin: 30
+  closeTrackingRadius: 200
+  closeTrackingExitMargin: 100
   facingDirectionHeading: 0
   relativeHeight: 0

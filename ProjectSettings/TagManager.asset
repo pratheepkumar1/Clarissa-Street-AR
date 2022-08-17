@@ -7,6 +7,9 @@ TagManager:
   - Sound Interaction
   - Model
   - UI Interaction
+  - Window Image
+  - Video
+  - Cue
   layers:
   - Default
   - TransparentFX
