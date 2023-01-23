@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OutDoorUsingGPS.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Detect.unity
     guid: da12888c30847cb4c8186c43aa7739d7
   m_configObjects:
